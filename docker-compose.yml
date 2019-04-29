@@ -1,0 +1,17 @@
+version: '2'
+services:
+  rabbitmq:
+    image: 'rabbitmq:3-management'
+    ports:
+      - '4369:4369'
+      - '5672:5672'
+      - '35197:35197'
+      - '8080:15672'
+    restart: always
+    hostname: rabbitmq06
+    volumes:
+      - ./data:/var/lib/rabbitmq:rw
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=qweRTY123
+      - RABBITMQ_CONFIG_FILE=/var/lib/rabbitmq/rabbitmq
